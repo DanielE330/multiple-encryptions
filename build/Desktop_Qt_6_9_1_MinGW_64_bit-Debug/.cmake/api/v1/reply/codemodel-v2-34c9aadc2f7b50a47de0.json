@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-4c370fc46d5174ba167a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "encryption",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "encryption::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-encryption-Debug-32909be9871cb834b7a8.json",
+					"name" : "encryption",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "encryption_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-encryption_autogen-Debug-bd6f69fb4183c7020047.json",
+					"name" : "encryption_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "encryption_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-encryption_autogen_timestamp_deps-Debug-d2f1b5021ca8cb9617c1.json",
+					"name" : "encryption_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Daniel/Desktop/learn QT/encryption/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+		"source" : "C:/Users/Daniel/Desktop/learn QT/encryption"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
