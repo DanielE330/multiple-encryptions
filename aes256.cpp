@@ -1,6 +1,7 @@
 #include "aes256.h"
 #include "Qt-AES/qaesencryption.h"
-QString AES256::encryption(QString str, QString strKey)
+
+const QString AES256::encryption(const QString &str, const QString &strKey)
 {
     QByteArray aesKey = QCryptographicHash::hash(strKey.toUtf8(), QCryptographicHash::Sha256);
 
@@ -14,7 +15,7 @@ QString AES256::encryption(QString str, QString strKey)
     return result.toBase64();
 }
 
-QString AES256::decryption(QString str, QString strKey)
+const QString AES256::decryption(const QString &str, const QString &strKey)
 {
     QByteArray encryptedData = QByteArray::fromBase64(str.toUtf8());
 
@@ -32,7 +33,7 @@ QString AES256::decryption(QString str, QString strKey)
     return encryption.removePadding(decrypted);
 }
 
-QByteArray AES256::generateIV()
+const QByteArray AES256::generateIV()
 {
     return QCryptographicHash::hash(QByteArray::number(QDateTime::currentMSecsSinceEpoch()) + QByteArray::number(QRandomGenerator::global()->generate()), QCryptographicHash::Md5).left(16);
 }

@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
+#include "aes256.h"
+#include "blowfish.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -22,15 +24,17 @@ EncryptionType MainWindow::check_radio_button(){
 
     else if(ui->to_aes_256->isChecked()) return EncryptionType::AES;
 
+    else if(ui->to_blowfish->isChecked()) return EncryptionType::Blowfish;
+
     return EncryptionType::None;
 }
 
 void MainWindow::on_convert_encryption_clicked()
 {
-    QString inputText = ui->input_line_encryption->text().trimmed();
-    QString key = ui->encryption_key->text().trimmed();
+    const QString str = ui->input_line_encryption->text().trimmed();
+    const QString strKey = ui->encryption_key->text().trimmed();
 
-    if (inputText.isEmpty() || key.isEmpty()) {
+    if (str.isEmpty() || strKey.isEmpty()) {
         ui->encryption_output->setText("Введите текст и ключ!");
         return;
     }
@@ -40,10 +44,13 @@ void MainWindow::on_convert_encryption_clicked()
         QString result;
         switch (chipher) {
             case EncryptionType::Caesar:
-                result = MyCesarChipher::encryption(inputText, key);
+                result = MyCesarChipher::encryption(str, strKey);
                 break;
             case EncryptionType::AES:
-                result = AES256::encryption(inputText, key);
+                result = AES256::encryption(str, strKey);
+                break;
+            case EncryptionType::Blowfish:
+                result = Blowfish::encryption(str, strKey);
                 break;
             case EncryptionType::None:
                 result = "Ничего не выбрано";
@@ -66,10 +73,10 @@ void MainWindow::on_convert_encryption_clicked()
 
 void MainWindow::on_convert_decryption_clicked()
 {
-    QString inputText = ui->input_line_decryption->text().trimmed();
-    QString key = ui->decryption_key->text().trimmed();
+    const QString str = ui->input_line_decryption->text().trimmed();
+    const QString strKey = ui->decryption_key->text().trimmed();
 
-    if (inputText.isEmpty() || key.isEmpty()) {
+    if (str.isEmpty() || strKey.isEmpty()) {
         ui->decryption_output->setText("Введите текст и ключ!");
         return;
     }
@@ -79,10 +86,13 @@ void MainWindow::on_convert_decryption_clicked()
         QString result;
         switch (chipher) {
         case EncryptionType::Caesar:
-            result = MyCesarChipher::decryption(inputText, key);
+            result = MyCesarChipher::decryption(str, strKey);
             break;
         case EncryptionType::AES:
-            result = AES256::decryption(inputText, key);
+            result = AES256::decryption(str, strKey);
+            break;
+        case EncryptionType::Blowfish:
+            result = Blowfish::decryption(str, strKey);
             break;
         case EncryptionType::None:
             result = "Ничего не выбрано";

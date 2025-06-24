@@ -10,15 +10,12 @@
 class AES256
 {
 public:
-    // Шифрует текст с ключом и возвращает результат в Base64
-    static QString encryption(QString str, QString strKey);
+    const static QString encryption(const QString &str, const QString &strKey);
 
-    // Дешифрует текст из Base64 с ключом
-    static QString decryption(QString str, QString strKey);
+    const static QString decryption(const QString &str, const QString &strKey);
 
 private:
-    // Генерирует IV (вектор инициализации)
-    static QByteArray generateIV();
+    const static QByteArray generateIV();
 };
 
 #endif // AESCIPHER_H

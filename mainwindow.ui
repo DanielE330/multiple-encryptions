@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -141,7 +141,7 @@
       <x>230</x>
       <y>20</y>
       <width>141</width>
-      <height>61</height>
+      <height>91</height>
      </rect>
     </property>
     <property name="title">
@@ -150,13 +150,20 @@
     <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
-       <x>7</x>
-       <y>19</y>
-       <width>114</width>
-       <height>38</height>
+       <x>8</x>
+       <y>20</y>
+       <width>75</width>
+       <height>58</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QRadioButton" name="to_cesar">
+        <property name="text">
+         <string>шифр цезаря</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QRadioButton" name="to_aes_256">
         <property name="text">
@@ -165,9 +172,9 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="to_cesar">
+       <widget class="QRadioButton" name="to_blowfish">
         <property name="text">
-         <string>шифр цезаря</string>
+         <string>Blowfish</string>
         </property>
        </widget>
       </item>

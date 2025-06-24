@@ -8,10 +8,11 @@ class MyCesarChipher
 public:
     MyCesarChipher();
 
-    static QString encryption(QString str, QString strKey);
-    static QString decryption(QString str, QString strKey);
+    const static QString encryption(const QString &str, const QString &strKey);
+
+    const static QString decryption(const QString &str, const QString &strKey);
 private:
-    static int calculateKey(QString strKey);
+    static int calculateKey(const QString &strKey);
 };
 
 #endif // MYCESARCHIPHER_H

@@ -3,7 +3,7 @@
 
 MyCesarChipher::MyCesarChipher() {}
 
-int MyCesarChipher::calculateKey(QString strKey){
+int MyCesarChipher::calculateKey(const QString &strKey){
     if(strKey.isEmpty()) {
         throw std::invalid_argument("Key cannot be empty");
     }
@@ -15,7 +15,7 @@ int MyCesarChipher::calculateKey(QString strKey){
     return keyValue;
 }
 
-QString MyCesarChipher::encryption(QString str,  QString strKey){
+const QString MyCesarChipher::encryption(const QString &str,  const QString &strKey){
     try {
         if(str.isEmpty()) {
             return "";
@@ -38,7 +38,7 @@ QString MyCesarChipher::encryption(QString str,  QString strKey){
     }
 }
 
-QString MyCesarChipher::decryption(QString str,  QString strKey){
+const QString MyCesarChipher::decryption(const QString &str,  const QString &strKey){
     try {
         if(str.isEmpty()) {
             return "";

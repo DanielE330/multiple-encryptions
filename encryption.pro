@@ -5,6 +5,7 @@ CONFIG += c++17
 SOURCES += \
     Qt-AES\qaesencryption.cpp\
     aes256.cpp \
+    blowfish.cpp \
     main.cpp \
     mainwindow.cpp \
     mycesarchipher.cpp
@@ -12,6 +13,7 @@ SOURCES += \
 HEADERS += \
     Qt-AES\qaesencryption.h\
     aes256.h \
+    blowfish.h \
     encryption_types.h \
     mainwindow.h \
     mycesarchipher.h

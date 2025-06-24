@@ -7,5 +7,6 @@
 enum class EncryptionType {
     Caesar,
     AES,
+    Blowfish,
     None
 };
