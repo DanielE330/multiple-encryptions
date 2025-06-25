@@ -6,29 +6,264 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>501</width>
-    <height>327</height>
+    <width>395</width>
+    <height>309</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>MainWindow</string>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #121212;
+}
+
+QWidget {
+    color: #ffffff;
+    font-family: 'Segoe UI';
+    font-size: 9pt;
+}
+
+/* Improved Tab Widget */
+QTabWidget::pane {
+    border: 1px solid #4a4a4a;
+    background: #1e1e1e;
+    margin-top: -1px;
+    border-radius: 4px;
+}
+
+QTabBar::tab {
+    background: #252525;
+    color: #aaaaaa;
+    padding: 8px 12px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-right: 2px;
+    transition: all 0.2s ease;
+}
+
+QTabBar::tab:selected {
+    background: #252525;
+    color: #ffffff;
+    font-weight: bold;
+    border-bottom: 2px solid #ff0000;
+}
+
+QTabBar::tab:hover {
+    background: #2e2e2e;
+    color: #ffffff;
+}
+
+QTabBar::tab:disabled {
+    color: #555555;
+}
+
+/* Improved Line Edit */
+QLineEdit {
+    background: #252525;
+    color: #ffffff;
+    border: 1px solid #3a3a3a;
+    padding: 6px 8px;
+    border-radius: 4px;
+    selection-background-color: #ff0000;
+    selection-color: #000000;
+}
+
+QLineEdit:focus {
+    border: 1px solid #ff0000;
+    outline: none;
+}
+
+QLineEdit:disabled {
+    background: #1a1a1a;
+    color: #555555;
+    border: 1px solid #2a2a2a;
+}
+
+/* Improved Buttons */
+QPushButton {
+    background: #ff0000;
+    color: #000000;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    min-width: 100px;
+    transition: background 0.2s ease;
+}
+
+QPushButton:hover {
+    background: #ff3333;
+}
+
+QPushButton:pressed {
+    background: #cc0000;
+}
+
+QPushButton:disabled {
+    background: #4a4a4a;
+    color: #2a2a2a;
+}
+
+/* Improved Group Box */
+QGroupBox {
+    color: #ff0000;
+    border: 1px solid #3a3a3a;
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+}
+
+/* Improved Radio Buttons */
+QRadioButton {
+    color: #ffffff;
+    spacing: 8px;
+    padding: 4px 0;
+}
+
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+QRadioButton::indicator::unchecked {
+    border: 2px solid #4a4a4a;
+    background: #252525;
+}
+
+QRadioButton::indicator::unchecked:hover {
+    border: 2px solid #666666;
+}
+
+QRadioButton::indicator::checked {
+    border: 2px solid #ff0000;
+    background: qradialgradient(
+        cx:0.5, cy:0.5, radius:0.5,
+        fx:0.5, fy:0.5,
+        stop:0 #ff0000, stop:0.5 #ff0000, stop:0.6 #252525, stop:1 #252525
+    );
+}
+
+QRadioButton::indicator::checked:hover {
+    border: 2px solid #ff3333;
+    background: qradialgradient(
+        cx:0.5, cy:0.5, radius:0.5,
+        fx:0.5, fy:0.5,
+        stop:0 #ff3333, stop:0.5 #ff3333, stop:0.6 #252525, stop:1 #252525
+    );
+}
+
+QRadioButton:disabled {
+    color: #555555;
+}
+
+QRadioButton::indicator:disabled {
+    border: 2px solid #2a2a2a;
+    background: #1a1a1a;
+}
+
+/* Improved Menu Bar */
+QMenuBar {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 4px;
+}
+
+QMenuBar::item {
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+QMenuBar::item:selected {
+    background: #ff0000;
+    color: #000000;
+}
+
+QMenuBar::item:pressed {
+    background: #cc0000;
+}
+
+/* Improved Status Bar */
+QStatusBar {
+    background: #1e1e1e;
+    color: #ffffff;
+    border-top: 1px solid #3a3a3a;
+    padding: 4px;
+}
+
+QStatusBar::item {
+    border: none;
+}
+
+/* Scroll Bars */
+QScrollBar:vertical {
+    border: none;
+    background: #1e1e1e;
+    width: 10px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #3a3a3a;
+    min-height: 20px;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #4a4a4a;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0;
+    background: none;
+}
+
+QScrollBar:horizontal {
+    border: none;
+    background: #1e1e1e;
+    height: 10px;
+    margin: 0;
+}
+
+QScrollBar::handle:horizontal {
+    background: #3a3a3a;
+    min-width: 20px;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #4a4a4a;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    width: 0;
+    background: none;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>0</y>
+      <y>10</y>
       <width>221</width>
       <height>281</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
-      <string> шифровка </string>
+      <string>Шифровка</string>
      </attribute>
      <widget class="QWidget" name="layoutWidget_2">
       <property name="geometry">
@@ -43,7 +278,7 @@
        <item>
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>текст для шифровки</string>
+          <string>Текст для шифровки:</string>
          </property>
         </widget>
        </item>
@@ -53,7 +288,7 @@
        <item>
         <widget class="QLabel" name="label_5">
          <property name="text">
-          <string>ключ</string>
+          <string>Ключ:</string>
          </property>
         </widget>
        </item>
@@ -63,26 +298,39 @@
        <item>
         <widget class="QPushButton" name="convert_encryption">
          <property name="text">
-          <string>конвертировать</string>
+          <string>Зашифровать</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>вывод</string>
+          <string>Результат:</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLineEdit" name="encryption_output"/>
        </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
-      <string>расшифровка</string>
+      <string>Расшифровка</string>
      </attribute>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
@@ -97,7 +345,7 @@
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>текст для расшифровки</string>
+          <string>Текст для расшифровки:</string>
          </property>
         </widget>
        </item>
@@ -107,7 +355,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>ключ</string>
+          <string>Ключ:</string>
          </property>
         </widget>
        </item>
@@ -117,19 +365,32 @@
        <item>
         <widget class="QPushButton" name="convert_decryption">
          <property name="text">
-          <string>конвертировать</string>
+          <string>Расшифровать</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>вывод</string>
+          <string>Результат:</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLineEdit" name="decryption_output"/>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
@@ -138,29 +399,32 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>240</x>
       <y>20</y>
-      <width>141</width>
-      <height>91</height>
+      <width>151</width>
+      <height>121</height>
      </rect>
     </property>
     <property name="title">
-     <string>Шифры:</string>
+     <string>Методы шифрования:</string>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget_3">
      <property name="geometry">
       <rect>
-       <x>8</x>
+       <x>10</x>
        <y>20</y>
-       <width>75</width>
-       <height>58</height>
+       <width>131</width>
+       <height>100</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QRadioButton" name="to_cesar">
         <property name="text">
-         <string>шифр цезаря</string>
+         <string>Шифр Цезаря</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -181,16 +445,6 @@
      </layout>
     </widget>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>501</width>
-     <height>18</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

@@ -21,5 +21,7 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
+win32:RC_FILE = icon.rc
+
 target.path = $$PWD/bin
 INSTALLS += target
